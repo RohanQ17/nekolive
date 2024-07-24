@@ -1,0 +1,42 @@
+{%  extends 'main.html'%}
+{% load static %}
+{% block content %}
+<section class="s1">
+		<div class="main-container">
+			<div class="greeting-wrapper">
+				<h1 style="margin: 0px">Hi, I'm Dennis Ivanov</h1>
+			</div>
+
+
+			<div class="intro-wrapper">
+
+
+				<div class="left-column">
+					<img id="profile_pic" src="{% static 'images/cat.gif' %}">
+
+				</div>
+
+				<div class="right-column">
+
+					<div id="preview-shadow">
+						<div id="preview">
+							<div id="corner-tl" class="corner"></div>
+							<div id="corner-tr" class="corner"></div>
+							<label for="room_name">Username</label><input type="text" id="user_name"  style="display: block;font-family: 'Roboto Mono', monospace; ;margin: 20px auto;font-size: 1rem;padding:3px ;border-radius: 8px;border: 0px;color: #15202B;">
+                            <label for="room_name">Roomname</label><input type="text" id="room_name"  style="display: block;font-family: 'Roboto Mono', monospace; ; margin: 20px auto; font-size: 1rem;padding:3px ; border-radius: 8px; border: 0px;color: #15202B ;">
+							<div id="corner-br" class="corner"></div>
+							<div id="corner-bl" class="corner"></div>
+						</div>
+					</div>
+				</div>
+                <div class="join">
+                    <div id="btnwrap">
+                    <button id="download">Enter a Room</button>
+                    </div>
+                </div>
+
+			</div>
+
+		</div>
+	</section>
+{% endblock %}
