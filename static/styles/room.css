@@ -1,0 +1,31 @@
+body{
+    background-color: #2f4464;
+}
+p,span,h1,h2,h3{
+    font-family: system-ui;
+    color: black;
+}
+
+
+.video-container{
+	border:1px solid #17a2b8;
+	border-radius: 5px;
+	margin: 2px;
+	background-color: whitesmoke;
+	flex-basis:500px ;
+	flex-grow: 1;
+	max-height: 100%;
+	min-height: 350px;
+}
+
+#video-streams{
+	display: flex;
+	flex-wrap: wrap;
+	height: 85vh;
+	width: 75%;
+	margin: 0 auto;
+}
+.video-player{
+	height: 100%;
+	width: 100%;
+}

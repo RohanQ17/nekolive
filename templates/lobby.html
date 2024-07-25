@@ -4,7 +4,9 @@
 <section class="s1">
 		<div class="main-container">
 			<div class="greeting-wrapper">
-				<h1 style="margin: 0px">Hi, I'm Dennis Ivanov</h1>
+				<h1 style="margin: 0 ;font-family: 'Honk', system-ui;">NekoLive</h1>
+                <h2 style="margin: 10px;color: #eeeeee ;font-family:  'Russo One';text-shadow: 9px 7px black;">Forget your usual laggy Video calls</h2>
+
 			</div>
 
 
@@ -22,16 +24,18 @@
 						<div id="preview">
 							<div id="corner-tl" class="corner"></div>
 							<div id="corner-tr" class="corner"></div>
+                            <form id="form1" method="POST">
 							<label for="room_name">Username</label><input type="text" id="user_name"  style="display: block;font-family: 'Roboto Mono', monospace; ;margin: 20px auto;font-size: 1rem;padding:3px ;border-radius: 8px;border: 0px;color: #15202B;">
                             <label for="room_name">Roomname</label><input type="text" id="room_name"  style="display: block;font-family: 'Roboto Mono', monospace; ; margin: 20px auto; font-size: 1rem;padding:3px ; border-radius: 8px; border: 0px;color: #15202B ;">
-							<div id="corner-br" class="corner"></div>
+                            </form>
+                            <div id="corner-br" class="corner"></div>
 							<div id="corner-bl" class="corner"></div>
 						</div>
 					</div>
 				</div>
                 <div class="join">
                     <div id="btnwrap">
-                    <button id="download">Enter a Room</button>
+                    <button form="form1" type="submit" id="download">Enter a Room</button>
                     </div>
                 </div>
 
@@ -39,4 +43,14 @@
 
 		</div>
 	</section>
+
+    <script type="text/javascript">
+
+    let form = document.getElementById('form1')
+    let handleSubmit = async (e) =>{
+        e.preventDefault()
+        window.open('/room/','_self')
+    }
+    form.addEventListener('submit', handleSubmit)
+    </script>
 {% endblock %}

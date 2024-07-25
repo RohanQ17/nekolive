@@ -29,12 +29,14 @@ body *{
 }
 
 
-h1, h2, h3, h4, h5, h6, strong{
+h1, h3, h4, h5, h6, strong{
 	color: var(--mainText);
 	font-family: 'Russo One', sans-serif;
 	font-weight: 500;
 }
+h2 {
 
+}
 p, li, span, label, input, textarea{
 	color: var(--secondaryText);
 	font-family: 'Roboto Mono', monospace;
@@ -268,6 +270,17 @@ h6 { font-size: 16px;}
 	padding-top: 30px;
 	padding-bottom: 30px;
 }
+
+
+
+
+
+
+
+
+
+
+
 
 @media screen and (max-width: 1200px){
 	.main-container{
