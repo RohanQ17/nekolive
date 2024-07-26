@@ -5,7 +5,7 @@
 		<div class="main-container">
 			<div class="greeting-wrapper">
 				<h1 style="margin: 0 ;font-family: 'Honk', system-ui;">NekoLive</h1>
-                <h2 style="margin: 10px;color: #eeeeee ;font-family:  'Russo One';text-shadow: 9px 7px black;">Forget your usual laggy Video calls</h2>
+                <h2 style="margin: 10px;color: #eeeeee ;font-family:  'Russo One',serif;text-shadow: 9px 7px black;">Forget your usual laggy Video calls</h2>
 
 			</div>
 
@@ -25,8 +25,8 @@
 							<div id="corner-tl" class="corner"></div>
 							<div id="corner-tr" class="corner"></div>
                             <form id="form1" method="POST">
-							<label for="room_name">Username</label><input type="text" id="user_name"  style="display: block;font-family: 'Roboto Mono', monospace; ;margin: 20px auto;font-size: 1rem;padding:3px ;border-radius: 8px;border: 0px;color: #15202B;">
-                            <label for="room_name">Roomname</label><input type="text" id="room_name"  style="display: block;font-family: 'Roboto Mono', monospace; ; margin: 20px auto; font-size: 1rem;padding:3px ; border-radius: 8px; border: 0px;color: #15202B ;">
+							<label for="room_name">Username</label><input type="text" id="user_name" name="username" style="display: block;font-family: 'Roboto Mono', monospace; ;margin: 20px auto;font-size: 1rem;padding:3px ;border-radius: 8px;border: 0px;color: #15202B;">
+                            <label for="room_name">Roomname</label><input type="text" id="room_name" name="room" style="display: block;font-family: 'Roboto Mono', monospace; ; margin: 20px auto; font-size: 1rem;padding:3px ; border-radius: 8px; border: 0px;color: #15202B ;">
                             </form>
                             <div id="corner-br" class="corner"></div>
 							<div id="corner-bl" class="corner"></div>
@@ -49,6 +49,17 @@
     let form = document.getElementById('form1')
     let handleSubmit = async (e) =>{
         e.preventDefault()
+        let room = e.target.room.value.toUpperCase()
+        let name = e.target.username.value
+
+        let response = await fetch(`/get_token/?channel=${room}`)
+        let data = await response.json()
+        let UID = data.uid
+        let Token = data.token
+        sessionStorage.setItem('UID',UID)
+        sessionStorage.setItem('Token',Token)
+        sessionStorage.setItem('room',room)
+        sessionStorage.setItem('name',name)
         window.open('/room/','_self')
     }
     form.addEventListener('submit', handleSubmit)

@@ -8,19 +8,29 @@
     <link rel="stylesheet" href="{% static 'styles/room.css' %}" >
     <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Russo+One&display=swap" rel="stylesheet">
-
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Honk&display=swap" rel="stylesheet">
 
 </head>
 <body>
   <main class="roompage">
-    <section id="room-name-wrapper">
-        <p>Room name: <span id="roomname"></span></p>
+    <section id="room-name-wrapper" style="font-size: 2.5rem;  text-align: center">
+        <p style=" margin: 0;font-family: 'Russo One', sans-serif;color: #eeeeee;">Room name: <span id="roomname" style="font-size: 3rem; font-family: 'Honk',serif"></span></p>
     </section>
 
-    <section id="video-streams">
-
-
-    </section>
+    <section id="video-streams"></section>
+        <section id="controls-wrapper">
+            <div class="icon-wrapper">
+                <img id="toggle-mic" class="control-icon" src="{% static 'images/microphone.svg' %}">
+            </div>
+            <div class="icon-wrapper">
+                <img id="video-toggle" class="control-icon" src="{% static 'images/video.svg' %}">
+            </div>
+            <div class="icon-wrapper">
+                <img id="leave-btn" class="control-icon" src="{% static 'images/leave.svg' %}">
+            </div>
+        </section>
 </main>
 
 <script type="text/javascript" src="{% static 'assets/AgoraRTC_N-4.21.0.js' %}"></script>
